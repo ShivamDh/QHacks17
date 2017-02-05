@@ -16,7 +16,7 @@
 				"https://*/*",
 				"http://*/*"
 			],
-			"js" : ["contentscript.js"],
+			"js" : ["quikpic.js"],
 			"run_at" : "document_start"
 		}
 	],
