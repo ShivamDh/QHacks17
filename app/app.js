@@ -16,19 +16,19 @@ app.get('/:tagId', (req, res) => {
 	// if file already exists, do nothing
 	// download req.params.tagId
 	// actually dont store the full sized image, just save in memory
-	var dl = download('http://i.imgur.com/cVjim4r.jpg', 'img/cVjim4r.jpg', () => {
+	var dl = download('http://www.w3schools.com/w3css/img_fjords.jpg', 'img/pic1.jpg', () => {
 		console.log('downloaded image')
 		// make it bad
-		jimp.read('img/cVjim4r.jpg', function (err, img) {
+		jimp.read('img/pic1.jpg', function (err, img) {
 		if (err)
 			throw err;
 
 		img.resize(256, 256)
 			.quality(60)
-			.write('img/cVjim4r-small.jpg', (err) => {
+			.write('img/pic1-small.jpg', (err) => {
 				if(err)
 					res.end()
-				res.sendFile(path.join(__dirname, '../app', './img/cVjim4r-small.jpg'));
+				res.sendFile(path.join(__dirname, '../app', './img/pic1-small.jpg'));
 			})
 		})
 
