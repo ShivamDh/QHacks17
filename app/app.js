@@ -1,8 +1,8 @@
 const fs = require('fs')
+const path = require('path')
 const http = require('http')
 
 const express = require('express')
-const bodyParser = require('body-parser')
 const jimp = require('jimp')
 
 var app = express()
@@ -25,15 +25,18 @@ app.get('/:tagId', (req, res) => {
 
 		img.resize(256, 256)
 			.quality(60)
-			.write('img/cVjim4r-small.jpg')
+			.write('img/cVjim4r-small.jpg', (err) => {
+				if(err)
+					res.end()
+				res.sendFile(path.join(__dirname, '../app', './img/cVjim4r-small.jpg'));
+			})
 		})
 
 		// this vvv sends the file over http
-		// res.sendFile('img/cVjim4r-small.jpg')
 	})
 
-	res.send(req.params.tagId)
-	res.end()
+	//res.send(req.params.tagId)
+	//res.end()
 })
 
 var server = app.listen(3000, () => {
