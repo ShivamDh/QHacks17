@@ -1,15 +1,18 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-	console.log("DOM fully loaded and parsed")
-	var list = document.querySelectorAll("img")
-	//we have the image urls stored in 'list' array
-	console.log(list.length)
-	// var urlArray[list.length()];
+document.addEventListener('DOMContentLoaded', function(event) {
+	var list = document.querySelectorAll('img')
+	// TODO: get base url of website
+	var base = 
+
 	for(var i = 0; i < list.length; i++) {
-		// urlArray[i] = list[i];
-		// set the src = ourdomain/link-to-image
-		
-		list[i].src = 'https://5a5d33f9.ngrok.io/a'
-		//list[i].src = some local host website url?
-		//list[i].src = 'http://quikpic.net.s3-website.ca-central-1.amazonaws.com/' + list[i].src
+		// TODO: escape the link
+		// TODO: add the root of the images domain to the link
+			// eg: img src = 'img/pic.png'
+			// =>  rootdomain + img.src
+			//     micmax.pw + img/pic.png
+
+		// replace imgur image with list[i].src
+		// 'http://i.imgur.com/cVjim4r.jpg'
+		var link = encodeURIComponent(base + list[i].src)
+		list[i].src = 'http://localhost:3000/' + link
 	}
  })
