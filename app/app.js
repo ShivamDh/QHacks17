@@ -1,10 +1,10 @@
 const fs = require('fs')
 const http = require('http')
-const path = require('path')
 
 const express = require('express')
 const bodyParser = require('body-parser')
 const jimp = require('jimp')
+
 var app = express()
 
 app.use((req, res, next) => {
@@ -15,6 +15,7 @@ app.use((req, res, next) => {
 app.get('/:tagId', (req, res) => {
 	// if file already exists, do nothing
 	// download req.params.tagId
+	// actually dont store the full sized image, just save in memory
 	var dl = download('http://i.imgur.com/cVjim4r.jpg', 'img/cVjim4r.jpg', () => {
 		console.log('downloaded image')
 		// make it bad
@@ -28,8 +29,6 @@ app.get('/:tagId', (req, res) => {
 		})
 		// send the bad image or just use the same name
 	})
-
-
 
 	res.send(req.params.tagId)
 	res.end()
@@ -53,18 +52,3 @@ function download(link, dest, cb) {
 	})
 	return file
 }
-
-function download(link, dest, cb) {
-	var file = fs.createWriteStream(dest);
-	var req = http.get(link, (res) => {
-		res.pipe(file);
-		file.on('finish', () => {
-			file.close(cb);
-		});
-	}).on('error', (err) => {
-		fs.unlink(dest);
-		if(cb)
-			cb(err.message);
-	});
-	return file;
-};
