@@ -27,7 +27,9 @@ app.get('/:tagId', (req, res) => {
 			.quality(60)
 			.write('img/cVjim4r-small.jpg')
 		})
-		// send the bad image or just use the same name
+
+		// this vvv sends the file over http
+		// res.sendFile('img/cVjim4r-small.jpg')
 	})
 
 	res.send(req.params.tagId)
