@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		//  list[i].src
 		// 'http://i.imgur.com/cVjim4r.jpg'
+		var src = list[i].src
 		var link = encodeURIComponent('http://i.imgur.com/cVjim4r.jpg')
-		list[i].src = 'http://localhost:3000/' + link
+		list[i].src = 'http://localhost:3000/' + src
 	}
  })
