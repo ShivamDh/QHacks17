@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git://github.com/loicmurumba/picloadextension.git"
   },
+<<<<<<< HEAD
   "author": "Michael Maxwell",
+=======
+  "author": "Michael Maxwell, Loic Murumba, Shivam Dharme, Austin Kranc",
+>>>>>>> 8ca9aca3b80d4f885b9c2458a6f6cfa97d455e6f
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.0",
