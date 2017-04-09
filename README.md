@@ -1,6 +1,6 @@
 # Welcome to my QHacks17 Project: QuikPic
 
-### Group Members: Shivam Dharme, [Loic Murumba](https://github.com/loicmurumba), [Michael Maxwell](https://github.com/mic-max), [Austin Kranc] (https://github.com/austinkranc)
+### Group Members: Shivam Dharme, [Loic Murumba](https://github.com/loicmurumba), [Michael Maxwell](https://github.com/mic-max), [Austin Kranc](https://github.com/austinkranc)
 
 This was a project created by my team and I at Queen's University's Hackathon, QHacks17 from February 3rd to 5th.
 
